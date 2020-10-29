@@ -209,9 +209,9 @@ public class HojaCalculo
         if(fila3 != null){
             strFila3 = fila3.toString();
         }
-        String representacion = nombre + "\n" + String.format("%s23 %s15 %s15 %s15","FECHA","INGRESOS","GASTOS","BENEFICIO") + strFila1
-         + strFila3 + strFila3 + "\n------------------------------------------------------------" + 
-        String.format("%f38.02€ %f15.02€ %f15.02€", getTotalIngresos(), getTotalGastos(), getBeneficio());
+        String representacion = nombre + "\n" + String.format("%24s %16s %15s %17s","FECHA","INGRESOS","GASTOS","BENEFICIO") + strFila1
+         + strFila2 + strFila3 + "\n-------------------------------------------------------------------------------\n" + 
+        String.format("%42.02f€ %15.02f€ %15.02f€", getTotalIngresos(), getTotalGastos(), getBeneficio());
         return representacion;
 
     }

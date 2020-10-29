@@ -95,11 +95,11 @@ public class Fila
      * (leer enunciado)
      */
     public String toString() {
-        String beneficio = String.format("%15.02f",getBeneficio());
+        String beneficio = String.format("%15.02f€",getBeneficio());
         if(getBeneficio() < 0){
             beneficio += " **";
         }
-        String repFila = String.format("\n%s8 %s15 %f15.02€ %f15.2€ %s€", this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
+        String repFila = String.format("\n%8s %15s %15.02f€ %15.02f€ %s", this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
         return repFila;
     }
 
