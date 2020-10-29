@@ -134,8 +134,8 @@ public class HojaCalculo
      * todas las filas que incluye la hoja
      */
     public double getTotalIngresos() {
-
-        return 0;
+        double total = fila1.getIngresos() + fila2.getIngresos() + fila3.getIngresos();
+        return total;
     }
     
     /**
@@ -143,7 +143,8 @@ public class HojaCalculo
      * entre todas las filas que incluye la hoja
      */
     public double getTotalGastos() {
-        return 0;
+        double gastos = fila1.getGastos() + fila2.getGastos() + fila3.getGastos();
+        return gastos;
 
     }
 
@@ -152,7 +153,8 @@ public class HojaCalculo
      * entre todas las filas que incluye la hoja
      */
     public double getBeneficio() {
-        return 0;
+        double beneficio = fila1.getBeneficio() + fila2.getBeneficio() + fila3.getBeneficio();
+        return beneficio;
 
     }
 
@@ -161,8 +163,10 @@ public class HojaCalculo
      * con el formato exacto que indica el enunciado
      */
     public String toString() {
-
-        return null;
+        String representacion = "Hoja 1\n" + String.format("%s23 %s15 %s15 %s15","FECHA","INGRESOS","GASTOS","BENEFICIO") + 
+        fila1.toString() + fila2.toString() + fila3.toString() + "\n------------------------------------------------------------" + 
+        String.format("%d38.02€ %d15.02€ %d15.02€", getTotalIngresos(), getTotalGastos(), getBeneficio());
+        return representacion;
 
     }
 
@@ -172,9 +176,11 @@ public class HojaCalculo
      * Al duplicar la hoja se duplicarán también las filas que contenga
      */
     public HojaCalculo duplicarHoja() {
-
-        
-        return null;
+        HojaCalculo copia = new HojaCalculo(this.nombre);
+        copia.addFila(fila1.duplicar());
+        copia.addFila(fila2.duplicar());
+        copia.addFila(fila3.duplicar());
+        return copia;
     }
 
 }
