@@ -33,6 +33,7 @@ public class TestHojaCalculo
         hoja.addFila(fila1);
         hoja.addFila(fila2);
         hoja.addFila(fila3);
+        hoja.addFila(fila4);
         HojaCalculo copia = hoja.duplicarHoja();
         System.out.println(hoja.toString());
         System.out.println("Duplicada " + copia.toString());

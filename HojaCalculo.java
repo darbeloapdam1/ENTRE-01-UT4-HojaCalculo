@@ -77,7 +77,6 @@ public class HojaCalculo
             contador--;
         }
         return contador;
-
     }
 
     /**
@@ -108,6 +107,7 @@ public class HojaCalculo
     public void addFila(Fila fila) {
         if(hojaCompleta()){
             System.out.println(fila.getId() + " no se puede añadir en " + nombre);
+            System.out.println();
         }else{
             if(fila1 == null){
                 fila1 = new Fila(fila.getId(), fila.getFecha(), fila.getIngresos(), fila.getGastos());
@@ -211,7 +211,7 @@ public class HojaCalculo
         }
         String representacion = nombre + "\n" + String.format("%24s %16s %15s %17s","FECHA","INGRESOS","GASTOS","BENEFICIO") + strFila1
          + strFila2 + strFila3 + "\n-------------------------------------------------------------------------------\n" + 
-        String.format("%42.02f€ %15.02f€ %15.02f€", getTotalIngresos(), getTotalGastos(), getBeneficio());
+        String.format("%40.02f€ %15.02f€ %15.02f€", getTotalIngresos(), getTotalGastos(), getBeneficio());
         return representacion;
 
     }

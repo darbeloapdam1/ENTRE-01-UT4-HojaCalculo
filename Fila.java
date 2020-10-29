@@ -99,7 +99,8 @@ public class Fila
         if(getBeneficio() < 0){
             beneficio += " **";
         }
-        String repFila = String.format("\n%8s %15s %15.02f€ %15.02f€ %s", this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
+        String repFila = String.format("\n%8s %15s %15.02f€ %15.02f€ %s", 
+        this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
         return repFila;
     }
 
