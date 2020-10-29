@@ -84,7 +84,8 @@ public class Fila
      * 
      */
     public Fila duplicar() {
-        Fila copia = new Fila(this.id,fecha.obtenerCopia() , this.ingresos, this.gastos);
+        Fecha cFecha = fecha.obtenerCopia();
+        Fila copia = new Fila(this.id,cFecha, this.ingresos, this.gastos);
         return copia;
 
     }
@@ -94,13 +95,12 @@ public class Fila
      * (leer enunciado)
      */
     public String toString() {
-        String beneficio = "" + getBeneficio();
+        String beneficio = String.format("%15.02f",getBeneficio());
         if(getBeneficio() < 0){
             beneficio += " **";
         }
-        String repFila = String.format("\n%s8 %s15 %d15.02€ %d15.2€ %d15.2€", this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
+        String repFila = String.format("\n%s8 %s15 %f15.02€ %f15.2€ %s€", this.id, fecha.toString(), this.ingresos, this.gastos, beneficio);
         return repFila;
-
     }
 
      
